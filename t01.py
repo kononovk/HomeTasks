@@ -6,6 +6,6 @@ def rotate(inp_list):
     return temp_list
 
 
-a = [1]
+a = [1, 2, 3]
 rot_a = rotate(a)
 print("a = {}, rotated a = {}".format(a, rot_a))
