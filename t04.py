@@ -1,8 +1,6 @@
 a = int(input("Input your number: "))
-for i in range(2, int(a**0.5) + 1):
-    if a % i == 0:
-        print('{} is not prime'.format(a))
-        exit(0)
-print('{} is prime'.format(a))
-
-
+ans = [i for i in range(-abs(a + 1), abs(a + 1)) if i != 0 and a % i == 0]
+if len(ans) == 4:
+    print("THis number is prime")
+else:
+    print("This number is not prime")
