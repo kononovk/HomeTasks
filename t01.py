@@ -1,7 +1,9 @@
-def rotate(l):
-    l.insert(0, l.pop(len(l) - 1))
+def rotate(inp_list):
+    temp_list = inp_list.copy()
+    temp_list.insert(0, temp_list.pop(len(temp_list) - 1))
+    return temp_list
 
 
 a = [1, 2, 3]
-rotate(a)
-print(a)
+rot_a = rotate(a)
+print("a = {}, rotated a = {}".format(a, rot_a))
