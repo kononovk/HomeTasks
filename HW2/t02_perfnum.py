@@ -15,15 +15,15 @@ def is_perfect_number(inp_num):
 
 class Validator(TestCase):
     def test_correct_values(self):
-        if not self.assertFalse(is_perfect_number(1), False):
+        if not self.assertFalse(is_perfect_number(1)):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertTrue(is_perfect_number(6), True):
+        if not self.assertTrue(is_perfect_number(6)):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertTrue(is_perfect_number(28), True):
+        if not self.assertTrue(is_perfect_number(28)):
             print("Test passed")
         else:
             print("Test failed")
