@@ -2,7 +2,7 @@ from memory_profiler import profile, time
 from unittest import TestCase, main
 from sys import setrecursionlimit
 from termcolor import colored
-
+from math import factorial
 
 #  Recursion factorial function #
 def fact_rec(n):
@@ -52,7 +52,7 @@ class Validator(TestCase):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact(10), 3628800):
+        if not self.assertEqual(fact(30000), factorial(30000)):
             print("Test passed")
         else:
             print("Test failed")
@@ -84,7 +84,7 @@ class Validator(TestCase):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact_rec(10), 3628800):
+        if not self.assertEqual(fact_rec(30000), factorial(30000)):
             print("Test passed")
         else:
             print("Test failed")
@@ -110,26 +110,26 @@ class Validator(TestCase):
 fact_of = 10000
 int_time = time.process_time()
 recursion_fact(fact_of)
-print(colored("Recursion factorial function time for {} = {})".format(fact_of, time.process_time() - int_time), 'yellow'))
+print(colored("Recursion factorial function time for {} = {}".format(fact_of, time.process_time() - int_time), 'yellow'))
 int_time = time.process_time()
 cycle_fact(fact_of)
-print(colored("Cycle factorial function time for {} = {})".format(fact_of, time.process_time() - int_time), 'yellow'))
+print(colored("Cycle factorial function time for {} = {}".format(fact_of, time.process_time() - int_time), 'yellow'))
 print(colored("____________________________________________________________________________________________", 'yellow'))
 fact_of = 20000
 int_time = time.process_time()
 recursion_fact(fact_of)
-print(colored("Recursion factorial function time for {} = {})".format(fact_of, time.process_time() - int_time), 'yellow'))
+print(colored("Recursion factorial function time for {} = {}".format(fact_of, time.process_time() - int_time), 'yellow'))
 int_time = time.process_time()
 cycle_fact(fact_of)
-print(colored("Cycle factorial function time for {} = {})".format(fact_of, time.process_time() - int_time), 'yellow'))
+print(colored("Cycle factorial function time for {} = {}".format(fact_of, time.process_time() - int_time), 'yellow'))
 print(colored("____________________________________________________________________________________________", 'yellow'))
 fact_of = 30000
 int_time = time.process_time()
 recursion_fact(fact_of)
-print(colored("Recursion factorial function time for {} = {})".format(fact_of, time.process_time() - int_time), 'yellow'))
+print(colored("Recursion factorial function time for {} = {}".format(fact_of, time.process_time() - int_time), 'yellow'))
 int_time = time.process_time()
 cycle_fact(fact_of)
-print(colored("Cycle factorial function time for {} = {})".format(fact_of, time.process_time() - int_time), 'yellow'))
+print(colored("Cycle factorial function time for {} = {}".format(fact_of, time.process_time() - int_time), 'yellow'))
 print(colored("____________________________________________________________________________________________", 'yellow'))
 
 '# test processing #'
