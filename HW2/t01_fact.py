@@ -4,10 +4,11 @@ from sys import setrecursionlimit
 from termcolor import colored
 from math import factorial
 
+
 #  Recursion factorial function #
 def fact_rec(n):
     if type(n) != int or n < 0:
-        return "ValueError"
+        raise ValueError("n must be natural")
     if n == 0:
         return 1
     return n * fact(n - 1)
@@ -23,7 +24,7 @@ def recursion_fact(n):
 def fact(n):
     curr_fact = 1
     if type(n) != int or n < 0:
-        return "ValueError"
+        raise ValueError("n must be natural")
     try:
         for i in range(1, int(n + 1)):
             curr_fact *= i
@@ -40,15 +41,15 @@ def cycle_fact(n):
 #  Test processing main class  #
 class Validator(TestCase):
     def test_correct_values(self):
-        if not self.assertEqual(fact("10"), "ValueError"):
+        if not self.assertRaises(ValueError, fact, "10"):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact("abc"), "ValueError"):
+        if not self.assertRaises(ValueError, fact, "abc"):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact(10.0), "ValueError"):
+        if not self.assertRaises(ValueError, fact, 10.0):
             print("Test passed")
         else:
             print("Test failed")
@@ -60,27 +61,27 @@ class Validator(TestCase):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact(-4), "ValueError"):
+        if not self.assertRaises(ValueError, fact, -4):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact(11.75), "ValueError"):
+        if not self.assertRaises(ValueError, fact, 11.75):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact([3]), "ValueError"):
+        if not self.assertRaises(ValueError, fact, [3]):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact_rec("10"), "ValueError"):
+        if not self.assertRaises(ValueError, fact_rec, "10"):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact_rec("abc"), "ValueError"):
+        if not self.assertRaises(ValueError, fact_rec, "abc"):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact_rec(10.0), "ValueError"):
+        if not self.assertRaises(ValueError, fact_rec, 10.0):
             print("Test passed")
         else:
             print("Test failed")
@@ -92,15 +93,15 @@ class Validator(TestCase):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact_rec(-4), "ValueError"):
+        if not self.assertRaises(ValueError, fact_rec, -4):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact_rec(11.75), "ValueError"):
+        if not self.assertRaises(ValueError, fact_rec, 11.75):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(fact_rec([3]), "ValueError"):
+        if not self.assertRaises(ValueError, fact_rec, [3]):
             print("Test passed")
         else:
             print("Test failed")

@@ -3,7 +3,7 @@ from unittest import TestCase, main
 
 def is_perfect_number(inp_num):
     if type(inp_num) != int or inp_num < 1:
-        return "ValueError"
+        raise ValueError("Input number must be natural")
     sum_of_dividers = 0
     for i in range(1, inp_num):
         if inp_num % i == 0:
@@ -27,15 +27,14 @@ class Validator(TestCase):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(is_perfect_number([6]), "ValueError"):
+        if not self.assertRaises(ValueError, is_perfect_number, [6]):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(is_perfect_number(-28), "ValueError"):
+        if not self.assertRaises(ValueError, is_perfect_number, -28):
             print("Test passed")
         else:
             print("Test failed")
 
 
 main()
-

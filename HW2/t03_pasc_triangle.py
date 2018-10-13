@@ -5,7 +5,7 @@ from unittest import TestCase, main
 
 def pascal_triangle(n):
     if type(n) != int or n < 0:
-        return "ValueError"
+        raise ValueError("n must be natural")
     triangle = []
     curr_string = []
     for i in range(0, n + 1):
@@ -19,7 +19,7 @@ def pascal_triangle(n):
 
 class Validator(TestCase):
     def test_correct_values(self):
-        if not self.assertEqual(pascal_triangle('abc'), "ValueError"):
+        if not self.assertRaises(ValueError, pascal_triangle, "abc"):
             print("Test passed")
         else:
             print("Test failed")
@@ -31,7 +31,7 @@ class Validator(TestCase):
             print("Test passed")
         else:
             print("Test failed")
-        if not self.assertEqual(pascal_triangle(-3), "ValueError"):
+        if not self.assertRaises(ValueError, pascal_triangle, -3):
             print("Test passed")
         else:
             print("Test failed")
