@@ -18,27 +18,20 @@ def pascal_triangle(n):
 
 
 class Validator(TestCase):
-    def test_correct_values(self):
-        if not self.assertRaises(ValueError, pascal_triangle, "abc"):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertEqual(pascal_triangle(0), [[1]]):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertEqual(pascal_triangle(2), [[1], [1, 1], [1, 2, 1]]):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertRaises(ValueError, pascal_triangle, -3):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertEqual(pascal_triangle(4), [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]):
-            print("Test passed")
-        else:
-            print("Test failed")
+    def test_string(self):
+        self.assertRaises(ValueError, pascal_triangle, "abc")
+
+    def test_negative_num(self):
+        self.assertRaises(ValueError, pascal_triangle, -3)
+
+    def test_corr_val_1(self):
+        self.assertEqual(pascal_triangle(0), [[1]])
+
+    def test_corr_val_2(self):
+        self.assertEqual(pascal_triangle(1), [[1], [1, 1]])
+
+    def test_corr_val_3(self):
+        self.assertEqual(pascal_triangle(4), [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]])
 
 
 main()

@@ -14,27 +14,20 @@ def is_perfect_number(inp_num):
 
 
 class Validator(TestCase):
-    def test_correct_values(self):
-        if not self.assertFalse(is_perfect_number(1)):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertTrue(is_perfect_number(6)):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertTrue(is_perfect_number(28)):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertRaises(ValueError, is_perfect_number, [6]):
-            print("Test passed")
-        else:
-            print("Test failed")
-        if not self.assertRaises(ValueError, is_perfect_number, -28):
-            print("Test passed")
-        else:
-            print("Test failed")
+    def test_false(self):
+        self.assertFalse(is_perfect_number(1))
+
+    def test_true_1(self):
+        self.assertTrue(is_perfect_number(6))
+
+    def test_true_2(self):
+        self.assertTrue(is_perfect_number(28))
+
+    def test_list(self):
+        self.assertRaises(ValueError, is_perfect_number, [6])
+
+    def test_negative_num(self):
+        self.assertRaises(ValueError, is_perfect_number, -28)
 
 
 main()
