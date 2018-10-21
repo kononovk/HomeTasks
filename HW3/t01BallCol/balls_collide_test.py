@@ -17,7 +17,7 @@ class Validator(TestCase):
         self.assertTrue(balls_collide((0, 0, 0, 1), (sqrt(3)/2, 1/2, 0, 0)))
 
     def test_negative_num(self):
-        self.assertRaises(ValueError, balls_collide, (3, 3, 1, -1), (2, 1, 5, 1))
+        self.assertRaises(ValueError, balls_collide, (3, 3, 1, -2), (2, 1, 5, 1))
 
 
 main()
