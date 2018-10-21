@@ -20,11 +20,11 @@ def letter_input():
 
 
 def choose_complexity(word):
-    complexity = int(input("1-Easy, 2-Medium, 3-Hard\nPlease, choose the complexity:"))
-    while complexity not in {1, 2, 3}:
+    complexity = input("1-Easy, 2-Medium, 3-Hard\nPlease, choose the complexity:")
+    while complexity not in {'1', '2', '3'}:
         print("The number of complexity must be 1, 2 or 3")
-        complexity = int(input("1-Easy, 2-Medium, 3-Hard\nPlease, choose the complexity:\n"))
-    attempts = len(word) * (4 - complexity)
+        complexity = input("1-Easy, 2-Medium, 3-Hard\nPlease, choose the complexity:")
+    attempts = len(word) * (4 - int(complexity))
     return attempts
 
 
