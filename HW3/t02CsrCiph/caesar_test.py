@@ -2,7 +2,7 @@ from HW3.t02CsrCiph.caesar_logic import encrypt, decrypt
 from unittest import TestCase, main
 
 
-class Tester(TestCase):
+class Validator(TestCase):
     def test_encrypt_1(self):
         self.assertEqual(encrypt(3, "Hello world"), "Khoor zruog")
 
