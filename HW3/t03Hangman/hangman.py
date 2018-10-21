@@ -13,10 +13,10 @@ def rand_word_gen(filename):
 
 def letter_input():
     temp_character = input("Choose the next letter: ")
-    if temp_character.lower() not in set(ascii_lowercase):
+    while temp_character.lower() not in set(ascii_lowercase):
         print("You must input only latin letters")
         temp_character = input("Choose the next letter: ")
-    return temp_character
+    return temp_character.lower()
 
 
 def choose_complexity(word):
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     while not is_word_guessed(secret_word, used_letters) and num_of_attempts > 0:
         print("You have got {} attempts".format(num_of_attempts))
         print("Word: " + colored(get_guessed_word(secret_word, used_letters), "green"))
-        curr_letter = letter_input().lower()
+        curr_letter = letter_input()
         if curr_letter not in available_letters:
             print("You didn't guess\n")
             num_of_attempts -= 1
@@ -47,8 +47,8 @@ if __name__ == '__main__':
             used_letters.add(curr_letter)
             available_letters.discard(curr_letter)
 
-    print()
     if num_of_attempts <= 0:
         print("You lose, I pour your wine into the sink\nThe word was " + colored(secret_word, "green"))
     else:
+        print("Word: " + colored(get_guessed_word(secret_word, used_letters), "green"))
         print(colored("Congratulations you won!!!", "yellow"))
