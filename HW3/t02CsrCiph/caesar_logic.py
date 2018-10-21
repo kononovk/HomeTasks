@@ -1,5 +1,5 @@
 def encrypt(offset, text):
-    cipher = ""
+    cipher = ''
 
     for i in text:
         if i.isspace():

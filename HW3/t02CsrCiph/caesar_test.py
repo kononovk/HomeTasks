@@ -10,7 +10,7 @@ class Tester(TestCase):
         self.assertEqual(encrypt(20, "I am the best programmer in the world"), "C ug nby vymn jlialuggyl ch nby qilfx")
 
     def test_encrypt_3(self):
-        self.assertEqual(encrypt(-1, "aabz"), "zzay")
+        self.assertEqual(encrypt(-1, "aacz"), "zzby")
 
     def test_decrypt_1(self):
         self.assertEqual(decrypt(3, "Khoor zruog"), "Hello world")
