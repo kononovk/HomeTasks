@@ -44,7 +44,7 @@ class Validator(TestCase):
         self.assertRaises(ValueError, fact, "10")
 
     def test_cycle_string2(self):
-        self.assertRaises(ValueError, fact, "abc")
+        self.assertRaises(ValueError, fact, "string")
 
     def test_cycle_float1(self):
         self.assertRaises(ValueError, fact, 10.0)
