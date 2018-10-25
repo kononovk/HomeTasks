@@ -1,11 +1,15 @@
+from string import ascii_lowercase
+
+
 def encrypt(offset, text):
     cipher = ''
 
     for i in text:
-        if i.isspace():
-            cipher += ' '
+        if i not in ascii_lowercase and i not in ascii_lowercase.upper():
+            cipher += i
             continue
-        ans = chr(ord('a') + (ord(i.lower()) - ord('a') + offset) % 26)
+        tmp1 = ord(i.lower()) - ord('a') + offset
+        ans = chr(ord('a') + tmp1 % 26)
         if i.isupper():
             cipher += ans.upper()
             continue
