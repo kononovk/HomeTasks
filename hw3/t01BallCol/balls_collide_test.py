@@ -1,6 +1,6 @@
 from math import sqrt
 from unittest import TestCase, main
-from HW3.t01BallCol.balls_collide import balls_collide
+from hw3.t01BallCol.balls_collide import balls_collide
 
 
 class Validator(TestCase):

@@ -1,4 +1,4 @@
-from HW3.t02CsrCiph.caesar_logic import encrypt, decrypt
+from hw3.t02CsrCiph.caesar_logic import encrypt, decrypt
 from termcolor import colored
 
 if __name__ == '__main__':

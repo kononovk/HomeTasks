@@ -1,5 +1,5 @@
 from random import randint
-from HW3.t03Hangman.hangman_logic import get_guessed_word, is_word_guessed
+from hw3.t03Hangman.hangman_logic import get_guessed_word, is_word_guessed
 from termcolor import colored
 from string import ascii_lowercase
 
