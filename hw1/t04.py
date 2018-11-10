@@ -1,4 +1,4 @@
-from HW1.t03 import num_of_dividers
+from hw1.t03 import num_of_dividers
 
 inp_num = int(input("Input your number: "))
 
